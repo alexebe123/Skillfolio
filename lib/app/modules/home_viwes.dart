@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:new_portfolio/components/colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/about_us.dart';
 import '../widgets/appbar.dart';
 
 class HomeViwes extends StatelessWidget {
@@ -17,82 +20,36 @@ class HomeViwes extends StatelessWidget {
             children: [
               const AppBarWidget(),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex: 2,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              height: 40,width: size.width/8,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(11),
-                                  color: praimeryColor),
-                              child: const Text(
-                                'Welcome I\'m',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                ),textAlign: TextAlign.center,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            const Text(
-                              'Ala Eddine Abbassi',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const Text(
-                              'Flutter Devloper',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            const Text(
-                              'Flutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter DevloperFlutter Devloper',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                              maxLines: 5,
-                            ),
-                          ],
-                        )),
-                    Expanded(
-                      flex: 4,
-                      child: Stack(alignment: Alignment.center,
-                        children: [Container( height: size.height,width: size.width/7,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(55),color: praimeryColor),
-                          ),
-                          Image.asset('assets/images/portfolio.png',
-                              height: size.height ),
-                          
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+              AboutUs(size: size),
+              const SizedBox(
+                height: 10,
               ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SvgPicture.asset(
+                    'assets/images/linkedin.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                  SvgPicture.asset(
+                    'assets/images/github.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn,),
+                  ),
+                  SvgPicture.asset(
+                    'assets/images/facebook.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                  SvgPicture.asset(
+                    'assets/images/whatsape.svg',
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                ],
+              )
             ],
           ),
         ),
